@@ -119,7 +119,7 @@ const EmpEdit = () => {
                         Save
                       </button>
                       <Link to="/" className="btn btn-danger">
-                        Back
+                        Back   
                       </Link>
                     </div>
                   </div>
