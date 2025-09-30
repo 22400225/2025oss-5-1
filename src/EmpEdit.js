@@ -28,7 +28,7 @@ const EmpEdit = () => {
   const [active, setActive] = useState(true);
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
-
+ 
   const handleSubmit = (e) => {
     e.preventDefault();
     const empdata = { id, name, email, phone, active };
