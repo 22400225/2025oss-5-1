@@ -10,7 +10,7 @@ const EmpCreate = () => {
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {    
     e.preventDefault(); 
     const empdata = { id, name, email, phone, active };
 
