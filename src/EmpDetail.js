@@ -21,7 +21,7 @@ const EmpDetail = () => {
     <div>
       <div className="card" style={{ textAlign: "left" }}>
         <div className="card-title">
-          <h2>Employee Create</h2>
+          <h2>Employee Details</h2>
         </div>
         <div className="card-body"></div>
         {empdata && (
@@ -35,6 +35,12 @@ const EmpDetail = () => {
             </h5>
             <h5>
               Phone is : <b>{empdata.phone}</b>
+            </h5>
+            <h5>
+              Gender is : <b>{empdata.Gender}</b>
+            </h5>
+            <h5>
+              Country is : <b>{empdata.Country}</b>
             </h5>
             <Link className="btn btn-danger" to="/">
               Back to List

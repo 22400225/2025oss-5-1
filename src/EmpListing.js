@@ -14,7 +14,7 @@ const EmpListing = () => {
   };
   const Removefunction = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("https://68db360923ebc87faa324e52.mockapi.io/users/" + id, {
+      fetch("https://68db360923ebc87faa324e52.mockapi.io/employee/" + id, {
         method: "DELETE",
       })
         .then((res) => {
@@ -28,7 +28,7 @@ const EmpListing = () => {
   };
 
   useEffect(() => {
-    fetch("https://68db360923ebc87faa324e52.mockapi.io/users/")
+    fetch("https://68db360923ebc87faa324e52.mockapi.io/employee/")
       .then((res) => {
         return res.json();
       })
@@ -58,6 +58,8 @@ const EmpListing = () => {
                 <td>Name</td>
                 <td>Email</td>
                 <td>Phone</td>
+                <td>Gender</td>
+                <td>Country</td>
                 <td>Action</td>
               </tr>
             </thead>
@@ -68,7 +70,9 @@ const EmpListing = () => {
                     <td>{item.id}</td>
                     <td>{item.name}</td>
                     <td>{item.email}</td>
-                    <td>{item.phone}</td>
+                    <td>{item.Phone}</td>
+                    <td>{item.Gender}</td>
+                    <td>{item.Country}</td>
                     <td>
                       <a
                         onClick={() => {

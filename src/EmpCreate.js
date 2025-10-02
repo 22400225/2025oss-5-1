@@ -10,8 +10,8 @@ const EmpCreate = () => {
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {    
-    e.preventDefault(); 
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const empdata = { id, name, email, phone, active };
 
     fetch("https://68db360923ebc87faa324e52.mockapi.io/employee/", {

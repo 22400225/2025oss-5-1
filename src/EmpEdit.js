@@ -14,24 +14,28 @@ const EmpEdit = () => {
         setId(resp.id);
         setName(resp.name);
         setEmail(resp.email);
-        setPhone(resp.phone);
+        setPhone(resp.Phone);
+        setGender(resp.Gender || ""); 
+        setCountry(resp.Country || ""); 
         setActive(resp.active);
       })
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [empid]);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState("");     
+  const [country, setCountry] = useState("");  
   const [active, setActive] = useState(true);
   const [validation, setValidation] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const empdata = { id, name, email, phone, active };
+    const empdata = { id, name, email, phone, gender, country, active };
 
     fetch("https://68db360923ebc87faa324e52.mockapi.io/employee/" + empid, {
       method: "PUT",
@@ -102,6 +106,29 @@ const EmpEdit = () => {
                       ></input>
                     </div>
                   </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Gender</label>
+                      <input
+                        value={gender}
+                        onChange={(e) => setGender(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Country</label>
+                      <input
+                        value={country}
+                        onChange={(e) => setCountry(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+                  
                   <div className="col-lg-12">
                     <div className="form-check">
                       <input
@@ -119,7 +146,7 @@ const EmpEdit = () => {
                         Save
                       </button>
                       <Link to="/" className="btn btn-danger">
-                        Back   
+                        Back
                       </Link>
                     </div>
                   </div>
