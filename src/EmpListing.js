@@ -28,7 +28,7 @@ const EmpListing = () => {
   };
 
   useEffect(() => {
-    fetch("https://68db360923ebc87faa324e52.mockapi.io/users")
+    fetch("https://68db360923ebc87faa324e52.mockapi.io/users/")
       .then((res) => {
         return res.json();
       })
